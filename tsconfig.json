@@ -1,3 +1,13 @@
 {
-  "extends": "@react-native/typescript-config/tsconfig.json"
+  "extends": "@react-native/typescript-config/tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@hwmobile/components/": ["src/app/components/index.ts"],
+      "@hwmobile/contexts/*": ["src/app/contexts/*"],
+      "@hwmobile/hooks/*": ["src/app/hooks/*"],
+      "@hwmobile/screens/*": ["src/app/screens/*"],
+      "@hwmobile/navigation/*": ["src/app/navigation/*"],
+    }
+  }
 }
