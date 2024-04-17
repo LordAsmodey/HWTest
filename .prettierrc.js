@@ -6,7 +6,6 @@ module.exports = {
   singleQuote: true,
   trailingComma: 'all',
   tabWidth: 2,
-  importOrder: ['<THIRD_PARTY_MODULES>', '^@app/(.*)$', '^\\./(.*)$', '^\\.\\./(.*)$'],
-  importOrderSeparation: true,
+  importOrder: ['^@hwmobile/*(.*)$', '<THIRD_PARTY_MODULES>', '^\\./(.*)$', '^\\.\\./(.*)$'],
   importOrderSortSpecifiers: true,
 };

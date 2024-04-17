@@ -1,7 +1,7 @@
 module.exports = {
   root: true,
   extends: '@react-native',
-  plugins: ['simple-import-sort', 'import'],
+  plugins: ['import'],
   rules: {
     'react/react-in-jsx-scope': 'error',
     'import/first': 'error',
