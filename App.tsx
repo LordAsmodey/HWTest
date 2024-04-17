@@ -1,16 +1,24 @@
 import { CustomStatusBar } from '@hwmobile/components/';
+import { Navigation } from '@hwmobile/navigation/NavigationContainer.tsx';
 import React from 'react';
-import { SafeAreaView, ScrollView, Text } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
 function App(): React.JSX.Element {
   return (
-    <SafeAreaView>
+    <>
       <CustomStatusBar />
-      <ScrollView contentInsetAdjustmentBehavior="automatic">
-        <Text>Hello world!</Text>
-      </ScrollView>
-    </SafeAreaView>
+      <View style={styles.wrapper}>
+        <Navigation />
+      </View>
+    </>
   );
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  wrapper: {
+    flex: 1,
+    backgroundColor: '#0F0F0F',
+  },
+});
