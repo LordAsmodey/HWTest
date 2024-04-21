@@ -16,7 +16,7 @@ const routeConfig: IRouteConfig[] = [
 
 export type RootStackParamsList = {
   HomeScreen: undefined;
-  ContentViewScreen: undefined;
+  ContentViewScreen: { movieId: number };
 };
 
 export const RootStack = () => {

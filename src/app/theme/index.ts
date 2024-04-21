@@ -36,4 +36,5 @@ export const colors = {
   black: '#000',
   background: '#0F0F0F',
   gray: '#C4C8CC',
+  textBlue: '#00BFE5',
 };
