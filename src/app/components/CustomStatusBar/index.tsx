@@ -1,3 +1,4 @@
+import { colors } from '@hwmobile/theme/';
 import React from 'react';
 import { SafeAreaView, StatusBar, StyleSheet, View } from 'react-native';
 
@@ -10,5 +11,5 @@ export const CustomStatusBar = () => (
 );
 
 const styles = StyleSheet.create({
-  statusBar: { backgroundColor: '#0F0F0F' },
+  statusBar: { backgroundColor: colors.background },
 });

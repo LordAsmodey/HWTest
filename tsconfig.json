@@ -1,6 +1,7 @@
 {
   "extends": "@react-native/typescript-config/tsconfig.json",
   "compilerOptions": {
+    "typeRoots": ["./src/app/types"],
     "baseUrl": ".",
     "paths": {
       "@hwmobile/components/": ["src/app/components/index.ts"],
@@ -8,6 +9,8 @@
       "@hwmobile/hooks/*": ["src/app/hooks/*"],
       "@hwmobile/screens/*": ["src/app/screens/*"],
       "@hwmobile/navigation/*": ["src/app/navigation/*"],
+      "@hwmobile/theme/": ["src/app/theme/index.ts"],
+      "@hwmobile/utils/*": ["src/app/utils/*"],
     }
   }
 }
