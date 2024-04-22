@@ -34,3 +34,7 @@ To connect your own Firebase account, follow these steps:
 5. Replace the `GoogleService-Info.plist` file in the `ios` folder.
 6. Add Firebase Remote Config to the project.
 7. Add 2 JSON format keys to Firebase Remote Config: `banners` and `categories`. You can view the data structure in the `src/app/types` folder.
+
+## DEMO
+
+[DEMO](https://youtu.be/Axf1DjJVU6Q)
