@@ -1,79 +1,36 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# HWTest
 
-# Getting Started
+## Description
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+**HWTest** is a test project developed for "Holy Water" company. The goal of the project is to implement online novel and video viewing on mobile devices using React Native. The application supports streaming playback of m3u8 video files. New video content is loaded and updated via Firebase Remote Config.
 
-## Step 1: Start the Metro Server
+## Installation and Setup Instructions
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+To install and run the project, follow these steps:
 
-To start Metro, run the following command from the _root_ of your React Native project:
+1. Set up the required environment according to the [React Native documentation](https://reactnative.dev/docs/environment-setup).
+2. Clone the project repository.
+3. Install dependencies using the command `yarn`.
+4. Install pods for iOS if you are working with this platform.
+5. Start the Metro server with the command `yarn start`.
+6. Run the application on a device or emulator: `yarn run ios` for iOS or `yarn run android` for Android.
 
-```bash
-# using npm
-npm start
+## Features
 
-# OR using Yarn
-yarn start
-```
+### For Users:
+- View videos with the ability to save the last viewed novel and series.
 
-## Step 2: Start your Application
+### For Administrators:
+- Easy addition and modification of content via Firebase Remote Config.
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+## Firebase Setup Information
 
-### For Android
+To connect your own Firebase account, follow these steps:
 
-```bash
-# using npm
-npm run android
-
-# OR using Yarn
-yarn android
-```
-
-### For iOS
-
-```bash
-# using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
-
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
-
-## Step 3: Modifying your App
-
-Now that you have successfully run the app, let's modify it.
-
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+1. Register an account on [Firebase](https://firebase.google.com/).
+2. Add an Android project with package name `com.hwtest`.
+3. Replace the `google-services.json` file in the `android/app` folder.
+4. Add an iOS project with Bundle ID `org.reactjs.native.example.HWTest`.
+5. Replace the `GoogleService-Info.plist` file in the `ios` folder.
+6. Add Firebase Remote Config to the project.
+7. Add 2 JSON format keys to Firebase Remote Config: `banners` and `categories`. You can view the data structure in the `src/app/types` folder.
