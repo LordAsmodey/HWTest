@@ -11,7 +11,7 @@ To install and run the project, follow these steps:
 1. Set up the required environment according to the [React Native documentation](https://reactnative.dev/docs/environment-setup).
 2. Clone the project repository.
 3. Install dependencies using the command `yarn`.
-4. Install pods for iOS if you are working with this platform.
+4. Install pods for iOS if you are working with this platform - `cd ios` and `pod install`.
 5. Start the Metro server with the command `yarn start`.
 6. Run the application on a device or emulator: `yarn run ios` for iOS or `yarn run android` for Android.
 
