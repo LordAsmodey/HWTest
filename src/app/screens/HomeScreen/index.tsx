@@ -1,4 +1,4 @@
-import { BannersSlider, Divider, Header, Layout, SectionList } from '@hwmobile/components/';
+import { BannersSlider, ContinueWatching, Divider, Header, Layout, SectionList } from '@hwmobile/components/';
 import React from 'react';
 import { ScrollView, StyleSheet } from 'react-native';
 
@@ -10,6 +10,7 @@ export const HomeScreen = () => {
         <Divider marginBottom="8" />
         <BannersSlider />
         <Divider marginBottom="24" />
+        <ContinueWatching />
         <SectionList />
       </ScrollView>
     </Layout>
