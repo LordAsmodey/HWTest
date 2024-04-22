@@ -37,4 +37,4 @@ To connect your own Firebase account, follow these steps:
 
 ## DEMO
 
-[DEMO](https://youtu.be/Axf1DjJVU6Q)
+[DEMO](https://youtu.be/Axf1DjJVU6Q) on my android device with mobile internet
