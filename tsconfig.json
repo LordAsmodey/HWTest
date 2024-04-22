@@ -11,6 +11,7 @@
       "@hwmobile/navigation/*": ["src/app/navigation/*"],
       "@hwmobile/theme/": ["src/app/theme/index.ts"],
       "@hwmobile/utils/*": ["src/app/utils/*"],
+      "@hwmobile/services/*": ["src/app/services/*"],
     }
   }
 }

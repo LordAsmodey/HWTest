@@ -1,19 +1,23 @@
 import { LockedContent } from '@hwmobile/components/';
+import { useUser } from '@hwmobile/contexts/UserContext.tsx';
 import { RootStackParamsList } from '@hwmobile/navigation/staks/RootStak.tsx';
 import { Style, colors, fontFamilySet } from '@hwmobile/theme/';
 import { formatTimestamp } from '@hwmobile/utils/formatTimestamp.ts';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { Image, Pressable, StyleSheet, Text } from 'react-native';
 import { Movie } from '../../types/category.ts';
 
 const IMAGE_WIDTH = 120;
 const IMAGE_HEIGHT = 150;
 
-export const SectionSliderItem = ({ item }: { item: Movie }) => {
+export const SectionSliderItem = memo(({ item }: { item: Movie }) => {
   const [parentHeight, setParentHeight] = useState(IMAGE_HEIGHT);
   const navigation = useNavigation<NativeStackNavigationProp<RootStackParamsList>>();
+  const {
+    userData: { setLastWatchingMovie },
+  } = useUser();
 
   const isLocked = !item.isAvailable && item.availabilityDate !== null;
   const blurRadius = isLocked ? 10 : 0;
@@ -24,15 +28,22 @@ export const SectionSliderItem = ({ item }: { item: Movie }) => {
     setParentHeight(height);
   };
 
+  const navigationHandle = () => {
+    if (!isLocked) {
+      navigation.navigate('ContentViewScreen', { movieId: item.id });
+      setLastWatchingMovie({ id: item.id, numberOfStreams: 0 });
+    }
+  };
+
   return (
-    <Pressable onPress={() => navigation.navigate('ContentViewScreen', { movieId: item.id })} onLayout={onLayout}>
+    <Pressable onPress={navigationHandle} onLayout={onLayout}>
       {isLocked && <LockedContent parentHeight={parentHeight} parentWidth={IMAGE_WIDTH} />}
       <Image blurRadius={blurRadius} style={styles.image} source={{ uri: item.image }} />
       {isLocked && <Text style={styles.availabilityDate}>{availabilityDate}</Text>}
       <Text style={styles.title}>{item.title}</Text>
     </Pressable>
   );
-};
+});
 
 const styles = StyleSheet.create({
   image: {

@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { Dimensions, Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import { Banner } from '../../types/baner.ts';
 
-const RIGHT_PADDING_SHIFT = 48;
+const RIGHT_PADDING_SHIFT = 36;
 
 const IMAGE_WIDTH = Dimensions.get('window').width - RIGHT_PADDING_SHIFT;
 
