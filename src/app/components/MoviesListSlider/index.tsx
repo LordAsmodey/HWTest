@@ -2,12 +2,13 @@ import { Layout } from '@hwmobile/components/';
 import { useUser } from '@hwmobile/contexts/UserContext.tsx';
 import { useStreams } from '@hwmobile/hooks/useStreams.ts';
 import { RootStackParamsList } from '@hwmobile/navigation/staks/RootStak.tsx';
+import { moviesScreenOffset } from '@hwmobile/utils/constarts.ts';
 import { RouteProp, useRoute } from '@react-navigation/native';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Dimensions, FlatList, StyleSheet, ViewToken } from 'react-native';
 import { VideoItem } from './VideoItem.tsx';
 
-const slideLength = Dimensions.get('window').width;
+const slideLength = Dimensions.get('screen').height - moviesScreenOffset;
 
 export const MoviesListSlider = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number | null>(0);
@@ -57,7 +58,6 @@ export const MoviesListSlider = () => {
         style={styles.flatList}
         contentContainerStyle={styles.contentContainerStyle}
         data={movie?.streams || []}
-        horizontal
         pagingEnabled
         renderItem={({ item, index }) => (
           <VideoItem

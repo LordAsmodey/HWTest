@@ -1,3 +1,4 @@
+import { moviesScreenOffset } from '@hwmobile/utils/constarts.ts';
 import React, { memo } from 'react';
 import { Dimensions, StyleSheet, View } from 'react-native';
 import Video from 'react-native-video';
@@ -33,13 +34,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: screenWidth,
-    height: screenHeight,
+    height: screenHeight - moviesScreenOffset,
   },
   backgroundVideo: {
     position: 'absolute',
     top: 0,
     left: 0,
-    bottom: 24,
+    bottom: 0,
     right: 0,
   },
 });
